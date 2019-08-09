@@ -1,0 +1,18 @@
+version: '2.2'
+services:
+
+  doc:
+    build: .
+    ports:
+      - 9999:4000
+    working_dir: /opt/gitbook/doc
+    volumes:
+      - ./doc:/opt/gitbook/doc
+    command:
+      bash -c
+      "
+      if [ ! -f SUMMARY.md ]; then gitbook init; fi &&
+      gitbook serve
+      "
+    init: true
+
