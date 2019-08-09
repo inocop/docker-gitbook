@@ -5,9 +5,10 @@ services:
     build: .
     ports:
       - 9999:4000
-    working_dir: /opt/gitbook/doc
+      - 35729:35729
+    working_dir: /opt/gitbook/book
     volumes:
-      - ./doc:/opt/gitbook/doc
+      - ./book:/opt/gitbook/book
     command: >
       bash -c
       "
