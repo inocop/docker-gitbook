@@ -1,3 +1,3 @@
-FROM node:10
+FROM rust:1
 
-RUN npm install -g gitbook-cli
+RUN cargo install mdbook

@@ -12,8 +12,8 @@ services:
     command: >
       bash -c
       "
-      if [ ! -f SUMMARY.md ]; then gitbook init; fi &&
-      gitbook serve
+      if [ ! -f src/SUMMARY.md ]; then mdbook init; fi &&
+      mdbook serve -p 4000 -n 0.0.0.0 -w 35729 --websocket-hostname localhost
       "
     init: true
 
